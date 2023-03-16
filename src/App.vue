@@ -2,7 +2,7 @@
 import TwitterDM from './components/TwitterDM.vue';
 </script>
 
-<template>
+<template >
   <TwitterDM />
 </template>
 

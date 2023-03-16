@@ -1,15 +1,15 @@
 <template>
-  <div class="container__dm" :class="{ 'opened': opened }">
-    <div class="header__dm__container">
-      <div class="header__dm" @click="opened = !opened">
-        <p>Messages</p>
-        <div class="icons__dm">
-          <IconNewMessage class="icon__dm" />
-          <IconExpand class="icon__dm" :class="{ 'opened': !opened }" />
+      <div class="container__dm">
+        <div class="header__dm__container">
+          <div class="header__dm" @click="opened = !opened">
+            <p>Messages</p>
+            <div class="icons__dm">
+              <IconNewMessage class="icon__dm" />
+              <IconExpand class="icon__dm" :class="{ 'opened': !opened }" />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div></div>
+        <div class="content__dm" :class="{ 'opened': opened }"></div>
   </div>
 </template>
 
@@ -23,21 +23,23 @@ const opened = ref(false)
 
 <style>
 .container__dm {
-  @apply w-[400px] absolute bottom-0 right-0 mr-4 content-center bg-[#15202b] rounded-t-2xl
+  @apply w-[400px] absolute bottom-0 right-0 mr-4 content-center bg-[#15202b] rounded-t-2xl shadow-[0_0_5px_-1px_white];
 }
 
-.container__dm.opened {
-  @apply bottom-2/4
+.content__dm {
+  @apply max-h-[0] h-0 flex items-center justify-center text-[#f7f9f9] transition-all duration-300 ease-in;
+}
+
+.content__dm.opened {
+  @apply h-[50vh] max-h-[50vh] after:content-['Conversas_saudáveis_aqui'];
 }
 
 .icon__dm {
-  @apply w-[19px] h-[19px] cursor-pointer fill-[#f7f9f9];
-  transition: transform .5s ease;
+  @apply w-[19px] h-[19px] cursor-pointer fill-[#f7f9f9] transition-transform duration-300 ease-in;
 }
 
 .icon__dm.opened {
-  transform: rotate(180deg);
-  transition: transform .5s ease;
+  @apply rotate-180 transition-transform duration-300 ease-in
 }
 
 .icons__dm {
