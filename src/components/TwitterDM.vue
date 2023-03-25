@@ -23,23 +23,31 @@ const opened = ref(false)
 
 <style>
 .container__dm {
-  @apply w-[400px] absolute bottom-0 right-0 mr-4 content-center bg-[#15202b] rounded-t-2xl shadow-[0_0_5px_-1px_white];
+  @apply w-[400px] absolute bottom-0 inset-x-[40%] 
+  mr-4 content-center bg-[#15202b] 
+  rounded-t-2xl shadow-[0_0_5px_-1px_white];
 }
 
 .content__dm {
-  @apply max-h-[0] h-0 flex items-center justify-center text-[#f7f9f9] transition-all duration-300 ease-in;
+  @apply max-h-[0] h-0 flex items-center 
+  justify-center text-[#f7f9f9] transition-all 
+  duration-300 ease-in;
 }
 
 .content__dm.opened {
-  @apply h-[50vh] max-h-[50vh] after:content-['Conversas_saudáveis_aqui'];
+  @apply h-[50vh] max-h-[50vh] 
+  after:content-['Nada_por_aqui']
 }
 
 .icon__dm {
-  @apply w-[19px] h-[19px] cursor-pointer fill-[#f7f9f9] transition-transform duration-300 ease-in;
+  @apply w-[19px] h-[19px] cursor-pointer 
+  fill-[#f7f9f9] transition-transform 
+  duration-300 ease-in;
 }
 
 .icon__dm.opened {
-  @apply rotate-180 transition-transform duration-300 ease-in
+  @apply rotate-180 transition-transform 
+  duration-300 ease-in
 }
 
 .icons__dm {
@@ -47,7 +55,9 @@ const opened = ref(false)
 }
 
 .header__dm {
-  @apply justify-between flex items-center text-[#f7f9f9] w-full h-full text-[19px] cursor-pointer font-medium h-[50px]
+  @apply justify-between flex items-center
+  text-[#f7f9f9] w-full text-[19px] 
+  cursor-pointer font-medium h-[50px]
 }
 
 .header__dm__container {
